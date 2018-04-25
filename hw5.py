@@ -1,5 +1,6 @@
 import string
 
+
 def main(filename):
     fileobj = open(filename)
     lines = fileobj.readlines()
@@ -7,12 +8,13 @@ def main(filename):
     all_words = []
 
     for line in lines:
+        line = line.strip()
         words = line.split()
         
         for word in words:
             word = word.strip(string.punctuation)
             
-            if word != " " :
+            if word != "" :
                 all_words.append(word)
     from collections import Counter
     counter = Counter(all_words)
